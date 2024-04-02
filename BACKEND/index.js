@@ -1,23 +1,64 @@
-const express = require('express');
-const connectToDatabase = require('./config/database');
-require("dotenv").config();
-
-// Create an Express application
+const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
 
-// Middlewares
-app.use(express.json());
+const userRoutes = require("./routes/User");
+const profileRoutes = require("./routes/Profile");
+const paymentRoutes = require("./routes/Payments");
+const courseRoutes = require("./routes/Course");
 
-//Connecting with db
+const connectToDatabase = require("./config/database");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const {cloudinaryConnect } = require("./config/cloudinary");
+const fileUpload = require("express-fileupload");
+const dotenv = require("dotenv");
+
+dotenv.config();
+const PORT = process.env.PORT || 4000;
+
+//database connect
 connectToDatabase();
 
-// Define a route
-app.get('/', (req, res) => {
-  res.send('Hello, this is your Express.js app!');
+//middlewares
+app.use(express.json());
+app.use(cookieParser());
+
+app.use(
+	cors({
+		origin: "*",
+		credentials: true,
+	})
+)
+// app.use((req, res, next) => {
+// 	res.header('Access-Control-Allow-Origin', '*');
+// 	next();
+//   });
+
+app.use(
+	fileUpload({
+		useTempFiles:true,
+		tempFileDir:"/tmp",
+	})
+)
+
+//cloudinary connection
+cloudinaryConnect();
+
+//routes
+app.use("/api/v1/auth", userRoutes);
+app.use("/api/v1/profile", profileRoutes);
+app.use("/api/v1/course", courseRoutes);
+app.use("/api/v1/payment", paymentRoutes);
+
+
+//def route
+app.get("/", (req, res) => {
+	return res.json({
+		success:true,
+		message:'Your server is up and running....'
+	});
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(PORT, () => {
+	console.log(`App is running at ${PORT}`)
+})

@@ -3,10 +3,10 @@ const Course = require("../models/Course");
 const Section = require("../models/Section");
 const SubSection = require("../models/SubSection");
 const Category = require("../models/Category");
-const { uploadImageToCloudinary } = require("../utils/imageUploader");
-require("dotenv").config();
 const CourseProgress = require("../models/CourseProgress");
+const { uploadImageToCloudinary } = require("../utils/imageUploader");
 const { convertSecondsToDuration } = require("../utils/secToDuration");
+require("dotenv").config();
 
 exports.createCourse = async (req, res) => {
   try {
