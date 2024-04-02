@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const HiglightText2 = ({ text }) => {
+const HighlightText2 = ({ text }) => {
   return (
     <span
       className="bg-gradient-to-b from-[#FF512F] to-[#F09819] 
@@ -11,4 +11,4 @@ const HiglightText2 = ({ text }) => {
   );
 };
 
-export default HiglightText2;
+export default HighlightText2;

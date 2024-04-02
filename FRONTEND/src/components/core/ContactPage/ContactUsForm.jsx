@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 // import { apiConnector } from "../../services/apiconnector";
 // import { contactusEndpoint } from "../../services/apis";
-import CountryCode from "../../data/countrycode.json";
+import CountryCode from "../../../data/countrycode.json";
 import "../ContactPage/ContactForm.css";
 
 const ContactUsForm = () => {

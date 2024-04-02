@@ -10,7 +10,7 @@ import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import MyProfile from "./components/core/Dashboard/MyProfile";
 import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/Instructor";
-import AddCourse from "./components/core/Dashboard/Add Course/index";
+import AddCourse from "./components/core/Dashboard/AddCourse/index";
 import MyCourses from "./components/core/Dashboard/MyCourses";
 import EditCourse from "./components/core/Dashboard/EditCourse";
 import Settings from "./components/core/Dashboard/Settings";

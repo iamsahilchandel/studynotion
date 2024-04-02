@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 // import { Autoplay, FreeMode, Navigation, Pagination } from "swiper/modules";
 
-import Course_Card from "./Course_Card";
+import Course_Card from "./CourseCard";
 
 /* eslint-disable react/prop-types */
 const CourseSlider = ({ Courses }) => {

@@ -11,7 +11,7 @@ import { NavbarLinks } from "../../data/navbar-links";
 import ProfileDropDown from "../core/Auth/ProfileDropDown";
 
 import logo from "../../assets/Logo/Logo-Full-Light.png";
-// import "./loader.css";
+import "./loader.css";
 
 const Navbar = () => {
   const { token } = useSelector((state) => state.auth);
