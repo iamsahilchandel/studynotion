@@ -48,10 +48,7 @@ const TimelineSection = () => {
                   </div>
                 </div>
 
-                <div
-                  className={` ${index === 3 ? "hidden" : ""}   h-14 
-                            border-dotted border-r border-richblack-100 bg-richblack-400/0 w-[26px]`}
-                ></div>
+                <div className={` ${index === 3 ? "hidden" : ""} h-14 border-dotted border-r border-richblack-100 bg-richblack-400/0 w-[26px]`}></div>
               </div>
             );
           })}
@@ -78,7 +75,7 @@ const TimelineSection = () => {
             <div className="flex gap-5 items-center lg:px-14 px-7">
               <p className="text-3xl font-bold w-[75px]">250</p>
               <p className="text-caribbeangreen-300 text-sm w-[75px]">
-                TYpe of Courses
+                Type of Courses
               </p>
             </div>
           </div>

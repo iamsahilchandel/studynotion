@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Table, Tbody, Td, Th, Thead, Tr } from "react-super-responsive-table";
+// import { Table, Tbody, Td, Th, Thead, Tr } from "react-super-responsive-table";
 
 import { setCourse, setEditCourse } from "../../../../slices/courseSlice";
 
@@ -16,7 +16,7 @@ import { formatDate } from "../../../../services/formatDate";
 import { COURSE_STATUS } from "../../../../utils/constants";
 import convertSecondsToDuration from "../../../../utils/secToDurationFrontend";
 
-import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+// import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 import { FaCheck } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
