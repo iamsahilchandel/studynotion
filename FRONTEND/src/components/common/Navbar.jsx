@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
-import { Link, matchPath, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { IoIosArrowDown } from "react-icons/io";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Link, matchPath, useLocation } from 'react-router-dom';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { IoIosArrowDown } from 'react-icons/io';
+import { RxHamburgerMenu } from 'react-icons/rx';
 
-import { apiConnector } from "../../services/apiconnector";
-import { categories } from "../../services/apis";
-import { NavbarLinks } from "../../data/navbar-links";
-import ProfileDropDown from "../core/Auth/ProfileDropDown";
+import { NavbarLinks } from '../../data/navbar-links';
+import { categories } from '../../services/apis';
+import { apiConnector } from '../../services/apiconnector';
+import ProfileDropDown from '../core/Auth/ProfileDropDown';
 
-import logo from "../../assets/Logo/Logo-Full-Light.png";
-import "./loader.css";
+import logo from '../../assets/Logo/Logo-Full-Light.png';
+import './loader.css';
 
 const Navbar = () => {
   const { token } = useSelector((state) => state.auth);
@@ -24,10 +24,10 @@ const Navbar = () => {
 
   const fetchSublinks = async () => {
     try {
-      const result = await apiConnector("GET", categories.CATEGORIES_API);
+      const result = await apiConnector('GET', categories.CATEGORIES_API);
       setSubLinks(result.data.data);
     } catch (error) {
-      console.log("Could not fetch the category list");
+      console.log('Could not fetch the category list');
     }
   };
 
@@ -52,18 +52,14 @@ const Navbar = () => {
           <ul className=" hidden md:flex gap-x-6 text-richblack-25">
             {NavbarLinks.map((link, index) => (
               <li key={index}>
-                {link.title === "Catalog" ? (
+                {link.title === 'Catalog' ? (
                   <div className="relative flex items-center gap-2 group">
                     <p>{link.title}</p>
                     <IoIosArrowDown />
 
                     <div
                       className={`invisible absolute left-[50%] 
-                                    translate-x-[-49%] ${
-                                      subLinks.length
-                                        ? "translate-y-[15%]"
-                                        : "translate-y-[40%]"
-                                    }
+                                    translate-x-[-49%] ${subLinks.length ? 'translate-y-[15%]' : 'translate-y-[40%]'}
                                  top-[50%] z-50 
                                 flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900
                                 opacity-0 transition-all duration-200 group-hover:visible
@@ -92,15 +88,7 @@ const Navbar = () => {
                   </div>
                 ) : (
                   <Link to={link?.path}>
-                    <p
-                      className={`${
-                        matchRoute(link?.path)
-                          ? "text-yellow-25"
-                          : "text-richblack-25"
-                      }`}
-                    >
-                      {link.title}
-                    </p>
+                    <p className={`${matchRoute(link?.path) ? 'text-yellow-25' : 'text-richblack-25'}`}>{link.title}</p>
                   </Link>
                 )}
               </li>
@@ -110,7 +98,7 @@ const Navbar = () => {
 
         {/* Login/SignUp/Dashboard */}
         <div className="hidden md:flex gap-x-4 items-center">
-          {user && user?.accountType != "Instructor" && (
+          {user && user?.accountType != 'Instructor' && (
             <Link to="/dashboard/cart" className="relative pr-2">
               <AiOutlineShoppingCart className="text-2xl text-richblack-100 " />
               {totalItems > 0 && (

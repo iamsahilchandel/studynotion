@@ -6,6 +6,7 @@ export const NavbarLinks = [
   {
     title: "Catalog",
     // path: '/catalog',
+    /* ------ Catalog didn't use any path but instead fetch data using api ------ */
   },
   {
     title: "About Us",

@@ -1,6 +1,6 @@
 // This will prevent authenticated users from accessing this route
-import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 /* eslint-disable react/prop-types */
 function OpenRoute({ children }) {
